@@ -1,0 +1,3 @@
+# Protect github settings
+.github/CODEOWNERS    @mike-carey
+.github/settings.yml  @mike-carey
