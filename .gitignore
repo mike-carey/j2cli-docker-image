@@ -8,7 +8,7 @@ __pycache__/
 .direnv/
 
 # Environment variables
-.env
+/.env
 
 # Docker Storage
 .docker/
