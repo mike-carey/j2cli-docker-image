@@ -1,0 +1,21 @@
+- pipeline: "Build and Push"
+  on: "EVENT"
+  events:
+  - type: "PUSH"
+    refs:
+    - "refs/heads/main"
+  priority: "NORMAL"
+  actions:
+  - action: "Lint Dockerfile"
+    type: "DOCKERFILE_LINTER"
+    local_path: "Dockerfile"
+    shell_type: "sh"
+  - action: "Build Docker image"
+    type: "DOCKERFILE"
+    dockerfile_path: "Dockerfile"
+    target_platform: "linux/amd64"
+  - action: "Push Docker image"
+    type: "DOCKER_PUSH"
+    docker_image_tag: "latest"
+    repository: "mcarey/j2cli"
+    integration_hash: "WANYq1gK4oeE1QENe0ByxjX2mR"
